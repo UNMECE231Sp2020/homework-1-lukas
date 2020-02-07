@@ -13,13 +13,13 @@ int main()
 
 	for(i=0;i<4;i++)
 	{
-	HDLR1(fn_ptr[i], a, b);
+		HDLR1(fn_ptr[i], a, b);
 	
 	}
 	for(i=0;i<2;i++)
 	{
-	HDLR2(fn_ptr1[i], a);
-	HDLR2(fn_ptr1[i], b);
+		HDLR2(fn_ptr1[i], a);
+		HDLR2(fn_ptr1[i], b);
 	}
 
 	
