@@ -41,10 +41,29 @@ Complex complex_mult(Complex c1, Complex c2) {
 	return c;
 }
 
-Complex complex_div(Complex c1, Complex c2) {
+Complex complex_div(Complex c1, Complex c2)
+{
 	double denom = magnitude(c2)*magnitude(c2);
+
+	if (denom==0)
+	{
+		denom=1;
+		
+	}
 	Complex c = complex_mult(c1, complex_conj(c2));
 	c.real /= denom;
 	c.imag /= denom;
 	return c;
+}
+
+void HDLR1(Complex (*fn1_hdlr)(Complex, Complex), Complex c1, Complex c2)
+{
+	Complex K = fn1_hdlr(c1, c2);
+	print_complex(K);
+}
+
+void HDLR2(double (*fn2_hdlr)(Complex), Complex h)  
+{
+	double X = fn2_hdlr(h);
+	printf("%.1lf", X);
 }
